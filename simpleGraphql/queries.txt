@@ -1,0 +1,66 @@
+{
+  users{
+    name,
+    car {
+      make
+    }
+  }
+}
+
+===========
+
+{
+  user(id:2){
+    name,
+    car {
+      make
+    }
+  }
+}
+
+=============
+{
+  car(id:2){
+    make,
+    owner {
+      name
+    }
+  }
+}
+
+===============
+
+# mutation($makeUserId: Int!, $name: String!){
+#   makeUser(id: 4, name: "Raphael") {
+#     name
+#   }
+# }
+
+mutation{
+ removeUser(id: 2)
+}
+
+================
+
+mutation($makeCarId: Int!, $name: String!) {
+  makeCar(id: 4, make: "Isuzu", model: "ABC", color:"green") {
+    make
+  }
+}
+
+================
+
+mutation($removeCarId: Int!) {
+  removeCar(id: 4)
+}
+
+================
+
+{
+  cars{
+    id
+    make
+    model
+    color
+  }
+}
